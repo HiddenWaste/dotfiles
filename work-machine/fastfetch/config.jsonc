@@ -1,0 +1,83 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "command-raw",
+    "source": "pokemon-colorscripts --no-title -rn $(cat ~/.config/fastfetch/poke.txt)"
+  },
+  "display": {
+    "separator": " ➜  ",
+    "color": {
+      "keys": "magenta"
+    }
+  },
+  "modules": [
+    // ==========================================
+    // ACTIVE CORE ESSENTIALS
+    // ==========================================
+    "title",
+    "separator",
+    "os",
+    // "host",
+    // "kernel",
+    "uptime",
+    "packages",
+    "shell",
+    // "display", // Resolution & Refresh rate
+    // "de",
+    "wm",
+    // "wmtheme",
+    // "theme",
+    // "icons",
+    "terminal",
+    //"cpu",
+    //"gpu",
+    "memory",
+    "swap",
+    "disk",
+    //"colors"
+
+    // ==========================================
+    // DISABLED EXPERIMENTAL MODULES
+    // (Uncomment lines below to try them out!)
+    // ==========================================
+    
+    // --- Hardware & Power ---
+    // "battery",
+    // "poweradapter",
+    // "cpuusage",
+    // "cputemp",
+    // "gputemp",
+    // "board",        // Motherboard info
+    // "bios",
+    // "chassis",
+
+    // --- Desktop Environment Details ---
+    // "font",
+    // "cursor",
+    // "terminalfont",
+    // "terminalsize",
+
+    // --- Network & Connectivity ---
+    // "localip",
+    // "publicip",
+    // "wifi",
+    // "bluetooth",
+
+    // --- Media & Sound ---
+    // "sound",         // Sound cards/audio devices
+    // "player",        // Currently playing song (MPRIS)
+    // "media",         // Media player status
+
+    // --- System / Miscellaneous ---
+    // "users",         // Current logged-in users
+    // "uptime",
+    // "datetime",
+    // "locale",
+    // "vulkan",
+    // "opengl",
+    // "opencl",
+    // "btrfs",         // Btrfs specific filesystem info
+    // "zpool",         // ZFS pool status
+    // "break"          // Inserts a blank line for visual spacing
+  ]
+}
