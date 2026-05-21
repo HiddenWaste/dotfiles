@@ -3,6 +3,7 @@ alias t='echo $(timedatectl status | grep "Local" | tail -c 13 | head -c 9)'
 alias h='history'
 
 # some more ls aliases
+alias ls='ls $LS_OPTIONS --group-directories-first --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
