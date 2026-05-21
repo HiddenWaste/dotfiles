@@ -95,11 +95,11 @@ format = '[ $symbol ($version) ]($style)'
 
 [git_branch]
 symbol = ""
-style = "bg:#FCA17D fg:#000000"
+style = "bg:#FCA17D fg:#000000" # Fg is foreground or text. Set to black here for readability
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
-style = "bg:#FCA17D fg:#000000"
+style = "bg:#FCA17D fg:#000000" # Fg is foreground or text. Set to black here for readability
 format = '[$all_status$ahead_behind ]($style)'
 
 [golang]
