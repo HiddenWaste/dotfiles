@@ -100,6 +100,6 @@ fi
 
 export PATH="$HOME/.local/bin:$PATH" # Used to make sure bin is on path
                                     # initially added for kitty
-export TERM=xterm-256color # allows for some kitty stuffs
+# export TERM=xterm-256color # allows for some kitty stuffs
 eval "$(starship init bash)" # starship pretty shell prompt!
 fastfetch # Run fastfetch on open

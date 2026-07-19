@@ -10,6 +10,7 @@ gitacp() {
     git commit -m "$1" && \
     git push
 }
+
 enter-container() {
     # Get the names of running containers and store them in an array
     # --format '{{.Names}}' ensures we only fetch the names, ignoring the headers
@@ -47,8 +48,10 @@ enter-container() {
     sudo docker exec -it "$chosen_container" /bin/bash 2>/dev/null || \
     sudo docker exec -it "$chosen_container" /bin/sh
 }
+
 up() {
-    # 1. Detect OS
+
+    # Detect OS
     if [ -f /etc/os-release ]; then
         . /etc/os-release
         OS=$ID
@@ -56,14 +59,13 @@ up() {
         OS=$(uname -s)
     fi
 
-    # 2. Run OS-specific updates
-    case "$OS" in
+    case "$OS" in # different packages and managers for different OS
         ubuntu|debian)
-            echo "--- Updating Ubuntu Package System ---"
+            echo "Ubuntu Detected. Updating apt packages..."
             sudo apt update && sudo apt upgrade -y
             ;;
         arch)
-            echo "--- Updating Arch System via Yay ---"
+            echo "Arch Detected! Updating aur, pacman packages..."
             # yay handles both official pacman packages and AUR packages
             yay -Syu
             ;;
@@ -72,7 +74,9 @@ up() {
             ;;
     esac
 
-    # 3. Handle Cargo updates if installed
+# CARGO
+    echo "Checking Cargo..."
+    # Handle Cargo updates if installed
     if command -v cargo &> /dev/null; then
         echo "--- Checking Cargo Packages ---"
         if command -v cargo-install-update &> /dev/null; then
