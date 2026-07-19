@@ -47,3 +47,41 @@ enter-container() {
     sudo docker exec -it "$chosen_container" /bin/bash 2>/dev/null || \
     sudo docker exec -it "$chosen_container" /bin/sh
 }
+up() {
+    # 1. Detect OS
+    if [ -f /etc/os-release ]; then
+        . /etc/os-release
+        OS=$ID
+    else
+        OS=$(uname -s)
+    fi
+
+    # 2. Run OS-specific updates
+    case "$OS" in
+        ubuntu|debian)
+            echo "--- Updating Ubuntu Package System ---"
+            sudo apt update && sudo apt upgrade -y
+            ;;
+        arch)
+            echo "--- Updating Arch System via Yay ---"
+            # yay handles both official pacman packages and AUR packages
+            yay -Syu
+            ;;
+        *)
+            echo "Unsupported OS: $OS"
+            ;;
+    esac
+
+    # 3. Handle Cargo updates if installed
+    if command -v cargo &> /dev/null; then
+        echo "--- Checking Cargo Packages ---"
+        if command -v cargo-install-update &> /dev/null; then
+            # The efficient way if you have the sub-tool installed
+            cargo install-update -a
+        else
+            # Fallback: re-installs all currently installed cargo binaries to update them
+            echo "cargo-install-update not found. Re-installing binaries to update..."
+            cargo install $(cargo install --list | awk '/^[a-z0-9_-]+ v[0-9.]+:/ {print $1}')
+        fi
+    fi
+}

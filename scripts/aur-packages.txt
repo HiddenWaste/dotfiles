@@ -1,0 +1,6 @@
+spotatui
+zen-browser-bin
+firefox-bin
+cbonsai
+ulauncher
+pokemon-colorscripts-git
