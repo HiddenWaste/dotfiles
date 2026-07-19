@@ -1,0 +1,6 @@
+lf  #file-manager
+zen-browser-bin #web-browser
+cbonsai #idle-terminal-animation
+pokemon-colorscripts-git
+ulauncher
+mullvad-vpn-bin
