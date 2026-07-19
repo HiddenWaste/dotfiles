@@ -96,7 +96,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-source /usr/share/fzf/key-bindings.bash
+# source /usr/share/fzf/key-bindings.bash
 
 export PATH="$HOME/.local/bin:$PATH" # Used to make sure bin is on path
                                     # initially added for kitty
