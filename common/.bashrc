@@ -98,6 +98,7 @@ fi
 
 # source /usr/share/fzf/key-bindings.bash
 
+export HOST="project-car"
 export PATH="$HOME/.local/bin:$PATH" # Used to make sure bin is on path
                                     # initially added for kitty
 
