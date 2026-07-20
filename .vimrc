@@ -1,1 +1,0 @@
-/home/compy/code/dotfiles/common/.vimrc
