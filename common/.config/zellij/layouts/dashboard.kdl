@@ -1,0 +1,9 @@
+layout {
+    pane split_direction="vertical" {
+        pane stacked=true {
+            pane command="spotatui"
+            pane command="bluetui"
+            pane command="btop"
+        }
+    }
+}

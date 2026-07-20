@@ -11,11 +11,14 @@ esac
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
-HISTSIZE=1000 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTFILESIZE=2000
 
 # append to the history file, don't overwrite it
 shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -24,8 +27,7 @@ shopt -s checkwinsize
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
 
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+# make less more friendly for non-text input files, see lesspipe(1) [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -72,6 +74,8 @@ esac
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+alias rv='vim "$(ls -t | head -n 1)"'
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -96,13 +100,27 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# source /usr/share/fzf/key-bindings.bash
+g() {
+  grep -rn --exclude-dir={snap,.local,Trash,.cache,DevDocs,venv,node_modules,.git,dist,build} "$1" .
+}
 
-# Load Cargo/Rust binaries into PATH
-# [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
-export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH" # Used to make sure bin is on path
-                                    # initially added for kitty
+export EDITOR='vim' # Default editor                            # initially added for kitty
+export SSH_AUTH_SOCK="$HOME/snap/bitwarden/157/.bitwarden-ssh-agent.sock"
 
-eval "$(starship init bash)" # starship pretty shell prompt!
-fastfetch # Run fastfetch on open
+# Cowsay wit da dragon
+# cowsay -f dragon "WELCOME TO WEB4!!!"
+
+# Run fastfetch on open
+fastfetch
+
+
+. "$HOME/.cargo/env"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+eval "$(starship init bash)"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
+export PATH="$PATH:/opt/mssql-tools18/bin"

@@ -1,0 +1,14 @@
+layout {
+    cwd "~/code/syncthing/data/daily-journal"
+    pane split_direction="vertical" {
+        pane {
+            command "bash"
+            args "-c" "NOTE=\"$(date +%-m-%-d-%y).md\"; if [ ! -f \"$NOTE\" ]; then echo \"$NOTE not found. Press ENTER to run daily-script.sh...\"; read; ./daily-script.sh; else vim \"$NOTE\"; fi; exec bash"
+            name "daily-note"
+        }
+        pane split_direction="horizontal" {
+            pane name="misc"
+            pane command="cmatrix" size="30%"
+        }
+    }
+}

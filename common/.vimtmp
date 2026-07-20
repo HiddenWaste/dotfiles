@@ -1,0 +1,35 @@
+syntax on
+
+" Enable line numbers...
+set number
+
+" Status bar
+set laststatus=2
+
+set mouse=a
+set tabstop=4
+set shiftwidth=4 " number of spaces for auto indent
+set expandtab
+
+" Create the directory if it doesn't exist (optional but helpful)
+silent !mkdir -p ~/tmp/swp/ > /dev/null 2>&1
+
+" Set the directory for swap files
+set directory=~/tmp/swp//
+
+" Bonus: Also redirect undo and backup files to keep things clean
+set backupdir=~/tmp/swp//
+set undodir=~/tmp/swp//
+
+call plug#begin()
+
+Plug 'tpope/vim-fugitive' " Git in Vim!
+Plug 'sheerun/vim-polyglot' " More syntax for vim
+Plug 'sainnhe/gruvbox-material'
+
+call plug#end()
+
+" Configuration
+set background=dark
+let g:gruvbox_material_background = 'soft' " or 'medium', 'hard'
+colorscheme gruvbox-material
