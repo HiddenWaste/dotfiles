@@ -1,6 +1,7 @@
 alias z='zellij'
 alias t='echo $(timedatectl status | grep "Local" | tail -c 13 | head -c 9)'
 alias h='history'
+alias v='vim'
 
 unset LS_OPTIONS # Reset Env Variable
 
