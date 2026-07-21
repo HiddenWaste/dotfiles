@@ -109,3 +109,37 @@ repoupdate() {
 
     echo "Everything should be up to date!"
 }
+
+restart-container() {
+    # Fetch all container names (both running and stopped)
+    mapfile -t containers < <(sudo docker ps -a --format '{{.Names}}')
+    
+    # Check if any containers exist
+    if [ ${#containers[@]} -eq 0 ]; then
+        echo "No Docker containers found."
+        return 1
+    fi
+    
+    # Display the containers with 0-indexed numbers
+    echo "Available Docker Containers:"
+    echo "-------------------------"
+    for i in "${!containers[@]}"; do
+        echo "[$i] ${containers[$i]}"
+    done
+    echo "-------------------------"
+    
+    # Prompt for selection
+    read -p "Enter a number (0-$((${#containers[@]} - 1))) to restart: " selection
+    
+    # Validate input
+    if ! [[ "$selection" =~ ^[0-9]+$ ]] || [ "$selection" -ge "${#containers[@]}" ]; then
+        echo "Invalid selection. Exiting."
+        return 1
+    fi
+    
+    # Target selected container
+    chosen_container="${containers[$selection]}"
+    
+    echo "Restarting $chosen_container..."
+    sudo docker restart "$chosen_container"
+}
