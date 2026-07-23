@@ -50,7 +50,6 @@ enter-container() {
 }
 
 up() {
-
     # Detect OS
     if [ -f /etc/os-release ]; then
         . /etc/os-release
@@ -63,6 +62,7 @@ up() {
         ubuntu|debian)
             echo "Ubuntu Detected. Updating apt packages..."
             sudo apt update && sudo apt upgrade -y
+            sudo snap refresh
             ;;
         arch)
             echo "Arch Detected! Updating aur, pacman packages..."
