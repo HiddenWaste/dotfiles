@@ -5,7 +5,7 @@ alias v='vim'
 
 unset LS_OPTIONS # Reset Env Variable
 
-# 2. Safely initialize system default colors
+# Safely initialize system default colors
 if command -v dircolors &> /dev/null; then
     eval "$(dircolors -b)"
 fi

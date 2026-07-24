@@ -4,6 +4,18 @@ set mouse=a " allow usage of the mouse to move and select
 set tabstop=4 " space tabs use
 set expandtab " auto indentation in functions and such
 
+" Automatically indent new lines to match the previous line
+set autoindent
+
+" Smart indentation that understands code blocks (C, C++, Java, etc.)
+set smartindent
+
+" Automatically detect file type and apply indentation rules specific to it
+filetype plugin indent on
+
+" Number of spaces to use for each step of (auto)indent
+set shiftwidth=4
+
 " Create the directory if it doesn't exist (optional but helpful)
 silent !mkdir -p ~/tmp/swp/ > /dev/null 2>&1
 
