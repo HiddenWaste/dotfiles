@@ -25,3 +25,23 @@ set directory=~/tmp/swp//
 " Bonus: Also redirect undo and backup files to keep things clean
 set backupdir=~/tmp/swp//
 set undodir=~/tmp/swp//
+
+" Initialize vim-plug
+call plug#begin('~/.vim/plugged')
+
+" Plugins section
+Plug 'tpope/vim-commentary'
+
+" The core binary finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+" The Vim integration plugin (This gives you commands & mappings)
+Plug 'junegunn/fzf.vim'
+
+" End plugin setup
+call plug#end()
+
+" Map Ctrl+/ in Normal mode and Visual mode
+nnoremap <C-_> :Commentary<CR>
+vnoremap <C-_> :Commentary<CR>
+nnoremap <C-p> :Files<CR>
