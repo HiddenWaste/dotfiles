@@ -45,3 +45,6 @@ call plug#end()
 nnoremap <C-_> :Commentary<CR>
 vnoremap <C-_> :Commentary<CR>
 nnoremap <C-p> :Files<CR>
+
+" Map mouse double-click in Normal mode to execute 'gx'
+nnoremap <2-LeftMouse> gx
