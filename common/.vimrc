@@ -38,6 +38,9 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " The Vim integration plugin (This gives you commands & mappings)
 Plug 'junegunn/fzf.vim'
 
+" supercollider in vim!
+Plug 'supercollider/scvim'
+
 " End plugin setup
 call plug#end()
 
