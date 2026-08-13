@@ -90,7 +90,7 @@ up() {
     fi
 }
 
-repoupdate() {
+repo-update() {
     # This function is to be used in a parent folder of a bunch of repos
     echo "Warning: This script will automatically perform git pulls"
     

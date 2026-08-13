@@ -1,0 +1,14 @@
+layout {
+    pane
+    pane size=1 split_direction="vertical" {
+        pane size="75%" borderless=true {
+            plugin location="zellij:status-bar"
+        }
+        pane size="25%" borderless=true {
+            plugin location="file:/home/$USER/.config/zellij/plugins/zellij-datetime.wasm" {
+                timezone1 "CDT/-5"
+                default_timezone "CDT"
+            }
+        }
+    } 
+}
