@@ -1,0 +1,32 @@
+layout {
+    default_tab_template {
+        children
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    tab name="D&D" {
+        pane split_direction="vertical" {
+            // Left Column (Stacked Group)
+            pane stacked=true {
+                pane name="abilities" command="vim" cwd="~/syncthing/data/dnd/" {
+                    args "abilities.md"
+                }
+                pane name="spells" command="vim" cwd="~/syncthing/data/dnd/" {
+                    args "spells.md"
+                }
+            }
+
+            // Right Column (Stacked Group)
+            pane stacked=true {
+                pane name="attacking" command="vim" cwd="~/syncthing/data/dnd/" {
+                    args "attacking.md"
+                }
+                pane name="sheet" command="vim" cwd="~/syncthing/data/dnd/" {
+                    args "sheet.md"
+                }
+            }
+        }
+    }
+}
