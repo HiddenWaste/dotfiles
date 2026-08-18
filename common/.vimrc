@@ -26,6 +26,16 @@ set directory=~/tmp/swp//
 set backupdir=~/tmp/swp//
 set undodir=~/tmp/swp//
 
+" Format selected text using the default 'c-box' or 'shell' design
+"   use the boxes package to make standardized comment headers for code
+"   sections
+vnoremap <leader>b !boxes -d shell<CR>
+
+" Native Vim section folding
+"   allows for more readability and easier navigation
+set foldmethod=marker
+set foldmarker={{{,}}}
+
 " Initialize vim-plug
 call plug#begin('~/.vim/plugged')
 
