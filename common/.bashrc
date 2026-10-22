@@ -26,3 +26,7 @@ export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
 # Prompt & Shell Utilities
 eval "$(starship init bash)"
 fastfetch
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/compy/.local/bin:$PATH"

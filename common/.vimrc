@@ -1,4 +1,4 @@
-syntax on " syntax for code 
+" syntax on " syntax for code 
 set number " enable line numbers (top to bottom of file)
 set mouse=a " allow usage of the mouse to move and select
 set tabstop=4 " space tabs use
