@@ -1,0 +1,5 @@
+btop                # system monitoring
+spotatui
+smassh-bin
+docker-compose      # https://wiki.archlinux.org/title/Docker
+docker              #  -> need underlying engine

@@ -36,23 +36,23 @@ vnoremap <leader>b !boxes -d shell<CR>
 set foldmethod=marker
 set foldmarker={{{,}}}
 
-" Initialize vim-plug
-call plug#begin('~/.vim/plugged')
-
-" Plugins section
-Plug 'tpope/vim-commentary'
-
-" The core binary finder
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-
-" The Vim integration plugin (This gives you commands & mappings)
-Plug 'junegunn/fzf.vim'
-
-" supercollider in vim!
-Plug 'supercollider/scvim'
-
-" End plugin setup
-call plug#end()
+" " Initialize vim-plug
+" call plug#begin('~/.vim/plugged')
+" 
+" " Plugins section
+" Plug 'tpope/vim-commentary'
+" 
+" " The core binary finder
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" 
+" " The Vim integration plugin (This gives you commands & mappings)
+" Plug 'junegunn/fzf.vim'
+" 
+" " supercollider in vim!
+" Plug 'supercollider/scvim'
+" 
+" " End plugin setup
+" call plug#end()
 
 " Map Ctrl+/ in Normal mode and Visual mode
 nnoremap <C-_> :Commentary<CR>
