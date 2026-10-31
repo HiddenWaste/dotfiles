@@ -1,3 +1,7 @@
+p() {
+    pass show tokens/"$1" | wl-copy
+}
+
 gitacp() {
     # Check if a commit message was actually provided
     if [ -z "$1" ]; then
