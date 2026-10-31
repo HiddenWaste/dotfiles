@@ -1,3 +1,5 @@
+zen-browser
+zellij
 btop                # system monitoring
 spotatui
 smassh-bin
