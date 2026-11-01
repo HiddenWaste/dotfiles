@@ -1,5 +1,4 @@
 -- KEYBINDS --
-
 local mainMod = "SUPER" -- Set this as a var for now
 
 -- APPLICATIONS
@@ -7,10 +6,15 @@ hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd("kitty"))
 hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd('zen-browser'))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd('discord'))
 
+-- ZELLIJ TEMPLATES
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("kitty zellij --layout dashboard"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("kitty zellij --layout journal"))
+
 -- ROFI NAVIGATION
-hl.bind("SUPER + TAB", hl.dsp.exec_cmd('rofi -show window'))
-hl.bind("SUPER + SPACE", hl.dsp.exec_cmd('rofi -show drun'))
-hl.bind("SUPER + ESCAPE", hl.dsp.exec_cmd('rofi -show scripts -modes "scripts:~/.config/rofi/scripts/.hub.sh"'))
+hl.bind("SUPER + TAB", hl.dsp.exec_cmd('rofi -show window')) -- window switcher
+hl.bind("SUPER + SPACE", hl.dsp.exec_cmd('rofi -show drun')) -- application launcher
+hl.bind("SUPER + ESCAPE", hl.dsp.exec_cmd('rofi -show scripts -modes "scripts:~/.config/rofi/scripts/.hub.sh"')) -- sys controls
+hl.bind("SUPER + S", hl.dsp.exec_cmd('rofi -show ssh')) -- ssh to a machine
 
 -- GENERAL UTILITY
 hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | wl-copy")) -- Screen Snipping
