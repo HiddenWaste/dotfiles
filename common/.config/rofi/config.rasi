@@ -3,3 +3,9 @@ configuration {
 }
 
 @theme "/usr/share/rofi/themes/solarized_alternate.rasi"
+@import "~/.config/rofi/colors.rasi"
+
+window {
+    border: 2px;
+    border-color: @border-col;
+}

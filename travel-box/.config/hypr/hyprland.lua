@@ -1,5 +1,5 @@
 -- Create your files separately and then require them like this:
--- require("myColors")
+local colors = require("MyColors")
 require("keybinds")
 require("windows")
 
@@ -75,9 +75,10 @@ hl.config({
 
         border_size = 2,
 
+        -- these are controlled by colors.lua
         col = {
-            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
-            inactive_border = "rgba(595959aa)",
+            active_border   = colors.active_border,
+            inactive_border = colors.inactive_border,
         },
         
         resize_on_border = false, -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
