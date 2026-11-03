@@ -9,3 +9,6 @@ window {
     border: 2px;
     border-color: @border-col;
 }
+
+/* Machine-specific override */
+@import "local.rasi"

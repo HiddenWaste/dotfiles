@@ -2,6 +2,7 @@
 local colors = require("MyColors")
 require("keybinds")
 require("windows")
+require("autostart")
 
 ------------------
 ---- MONITORS ----
@@ -24,25 +25,16 @@ local terminal    = "kitty"
 local menu        = "hyprlauncher"
 local edit        = "vim"
 
--------------------
----- AUTOSTART ----
--------------------
-
--- Autostart necessary processes (like notifications daemons, status bars, etc.)
--- Or execute your favorite apps at launch like this:
---
-hl.on("hyprland.start", function () 
-  -- hl.exec_cmd(terminal)
-  hl.exec_cmd("hyprpaper")
-  hl.exec_cmd("~/.config/hypr/scripts/battery_monitor.sh")
-end)
-
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
 -------------------------------
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
+
+-- More dark mode configuration
+hl.env("GTK_THEME","adw-gtk3-dark")
+hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
 -----------------------
 ----- PERMISSIONS -----
@@ -73,7 +65,7 @@ hl.config({
         gaps_in  = 5,
         gaps_out = 20,
 
-        border_size = 2,
+        border_size = colors.border_size,
 
         col = {
             active_border   = colors.active_border,
