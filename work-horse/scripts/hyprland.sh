@@ -4,7 +4,7 @@
 
 pacman -Syu # update pacman
 
-pacman -S hyprland hyprpaper hypridle hyprlock dunst rofi polkit-agent-kde
+pacman -S hyprland hyprpaper hypridle hyprlock dunst rofi polkit-agent-kde grim slurp
 
 # hyprland - wayland based tiling window manager
 #               (wayland is the compositor)
@@ -19,3 +19,5 @@ pacman -S hyprland hyprpaper hypridle hyprlock dunst rofi polkit-agent-kde
 #   super + esc = shut down, restart, etc
 #   super + tab = window switching
 #   super + ??? = config shortcuts
+#
+# grim + slurp = used for screenshotting

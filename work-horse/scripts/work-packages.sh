@@ -1,4 +1,4 @@
-yay -Sy google-chrome filezilla rsync remmina
+yay -Sy google-chrome filezilla rsync remmina cifs-utils
 
 
 # google-chrome - zen doesn't like some of our webapps
@@ -8,3 +8,5 @@ yay -Sy google-chrome filezilla rsync remmina
 # rsync - way to send files across devices with ssh protocol
 #
 # remmina - rdp solution of choice
+#
+# cifs-utils - allows mounting of smb data shares for I:/ and cx_shared/
