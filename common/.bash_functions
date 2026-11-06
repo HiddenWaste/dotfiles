@@ -6,6 +6,10 @@ ec() {
     sudo docker exec -it "$1" /bin/bash
 }
 
+gr() {
+    grep -r --exclude-dir=".git" "$1" .
+}
+
 gitacp() {
     # Check if a commit message was actually provided
     if [ -z "$1" ]; then
