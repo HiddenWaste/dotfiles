@@ -19,13 +19,22 @@ if [ ! -d "$HOME/.password-store" ]; then                                # Check
     pass init "$GPG_ID"                                                  # Initialize pass password store with chosen key
 fi                                                                       # End password store initialization block
 
-read -rp "How many secrets do you want to add? " NUM_SECRETS             # Prompt user for count of secrets to insert
+read -rp "How many tokens do you want to add? " NUM_SECRETS             # Prompt user for count of secrets to insert
 
 for ((i = 1; i <= NUM_SECRETS; i++)); do                                 # Loop through total requested secret count
     echo "--- Secret $i of $NUM_SECRETS ---"                             # Display current secret iteration progress
     read -rp "Enter secret path/name (e.g. tokens/github): " SECRET_NAME # Prompt for secret path identifier
     pass insert "$SECRET_NAME"                                           # Securely insert the secret via standard prompt
 done                                                                     # End secret insertion loop
+
+# Now handle ssh passwords
+read -rp "How many ssh passwords would you like to add? " NUM_SSH
+
+for ((i=1; i <= NUM_SSH; i++)); do
+    echo "---SSH PASS $i of $NUM_SSH ---"
+    read -rp "Enter ssh pass path/name (e.g. ssh/web4) : " SECRET_NAME
+    pass insert "$SECRET_NAME"
+done
 
 echo "Done! To use them in ~/.bashrc:"                                   # Output completion message to user
 echo 'export GITHUB_TOKEN="$(pass show tokens/github 2>/dev/null)"'       # Print example export snippet for bashrc usage
