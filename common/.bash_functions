@@ -2,6 +2,15 @@ p() {
     pass show tokens/"$1" | wl-copy
 }
 
+# Specific ssh functions
+web4() {
+  sshpass -d3 ssh web4 3< <(pass show ssh/web4 | head -n 1)
+}
+
+dev-machine() {
+    sshpass -d3 ssh carter@dev-machine 3< <(pass show ssh/general | head -n 1)
+}
+
 ec() {
     sudo docker exec -it "$1" /bin/bash
 }

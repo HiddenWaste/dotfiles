@@ -3,9 +3,6 @@ alias t='echo $(timedatectl status | grep "Local" | tail -c 13 | head -c 9)'
 alias h='history'
 alias v='vim'
 
-# COntainer specific
-alias st='sudo docker exec -it scheduled-tasks /bin/bash'
-
 ############
 # LS STUFF #
 ############
