@@ -2,8 +2,8 @@
 set -euo pipefail                                                        # Exit on error, unset variables, or pipe failures
 
 if ! command -v pass &>/dev/null; then                                   # Check if the pass utility is installed
-    sudo yay -Sy --needed pass                                         # Install pass via pacman if it is missing
-fi                                                                       # End pass installation check
+    sudo yay -Sy --needed pass sshpass            # Install pass via pacman if it is missing
+fi                                                                       
 
 if [ ! -d "$HOME/.password-store" ]; then                                # Check if password store directory does not exist
     if ! gpg --list-secret-keys | grep -q "^sec"; then                   # Check if any secret GPG keys exist on system
