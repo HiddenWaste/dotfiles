@@ -36,6 +36,12 @@ hl.bind("SUPER + SHIFT + j", hl.dsp.window.move({ direction = "down"}))
 hl.bind("SUPER + SHIFT + h", hl.dsp.window.move({ direction = "left"}))
 hl.bind("SUPER + SHIFT + l", hl.dsp.window.move({ direction = "right"}))
 
+-- TUI APPLETS
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/toggle_tui_window.sh tui-wifi nmtui"))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/toggle_tui_window.sh tui-bt bluetui"))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/toggle_tui_window.sh tui-monitor btop"))
+hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/toggle_tui_window.sh tui-audio pulsemixer"))
+
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 for i = 1, 10 do

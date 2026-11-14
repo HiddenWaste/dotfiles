@@ -55,4 +55,25 @@ hl.window_rule({
     float = true,
 })
 
+-- Universal rule for all TUI pop-up applets
+hl.window_rule({
+    name = "tui-applets-base",
+    match = {
+        class = "^tui-.*",
+    },
+    float = true,
+    center = true,
+    size = { 850, 550 },
+    dim_around = true,        -- Dims the background slightly like a modal applet
+    stay_focused = true,      -- Keeps focus locked until you quit the TUI
+    animation = "popin 80%",
+})
 
+-- Optional: Larger size override specifically for btop
+hl.window_rule({
+    name = "tui-btop-size",
+    match = {
+        class = "^tui-monitor$",
+    },
+    size = { 1200, 750 },
+})
