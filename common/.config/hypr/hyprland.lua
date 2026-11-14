@@ -1,20 +1,9 @@
--- Create your files separately and then require them like this:
-local colors = require("MyColors")
-require("keybinds")
-require("windows")
+-- Create files separately and then require them
 require("autostart")
-
-------------------
----- MONITORS ----
-------------------
-
--- See https://wiki.hypr.land/Configuring/Basics/Monitors/
-hl.monitor({
-    output   = "",
-    mode     = "preferred",
-    position = "auto",
-    scale    = "auto",
-})
+require("monitors")
+local colors = require("MyColors")
+require("windows")
+require("keybinds")
 
 ---------------------
 ---- MY PROGRAMS ----
