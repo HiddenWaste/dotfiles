@@ -1,4 +1,4 @@
-yay -Sy tailscale openssh
+yay -S --needed --noconfirm tailscale openssh
 
 # Start/Enable necessary system services
 sudo systemctl enable --now systemd-resolved

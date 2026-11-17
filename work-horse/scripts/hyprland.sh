@@ -2,9 +2,9 @@
 #   arch setup! the main thing to note is some of this is the
 #   first stuff to be installed, especially if a DE is desired.
 
-pacman -Syu # update pacman
+pacman -Syu --noconfirm # update pacman
 
-pacman -S hyprland hyprpaper hypridle hyprlock dunst rofi polkit-agent-kde grim slurp
+pacman -S --needed --noconfirm hyprland hyprpaper hypridle hyprlock dunst rofi polkit-agent-kde grim slurp wl-clipboard jq otf-hermit-nerd 
 
 # hyprland - wayland based tiling window manager
 #               (wayland is the compositor)
@@ -20,4 +20,12 @@ pacman -S hyprland hyprpaper hypridle hyprlock dunst rofi polkit-agent-kde grim 
 #   super + tab = window switching
 #   super + ??? = config shortcuts
 #
-# grim + slurp = used for screenshotting
+# polkit-agent-kde -
+#
+# grim + slurp - used for screenshotting
+#
+# wl-clipboard - provides a clipboard along with commands like wl-copy and wl-paste to interact with the clipboard via cli
+#
+# jq - required for rofi to see dunst log history for relevant script(s)
+#
+# otf-hermit-nerd - nerd font! Needed for emoticons and such.  

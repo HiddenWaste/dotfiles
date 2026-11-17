@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Install required packages (with standard spaces and --needed)
-sudo pacman -S --needed xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \
+sudo pacman -S --needed --noconfirm xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \
   dconf adw-gtk-theme qt5ct qt6ct kvantum
 
 # Ensure target config directories exist
@@ -35,4 +35,4 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
 
 # Restart portals so running browsers pick up the change immediately
-systemctl --user restart xdg-desktop-portal-gtk.service xdg-desktop-portal.service
+systemctl --user restart xdg-desktop-portal-gtk.service xdg-desktop-portal.service || true 

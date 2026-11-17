@@ -1,1 +1,1 @@
-sudo pacman -S pipewire pipewire-pulse pipewire-alsa pipewire-audio wireplumber pavucontrol
+sudo pacman -S --needed --noconfirm pipewire pipewire-pulse pipewire-alsa pipewire-audio wireplumber pavucontrol

@@ -1,4 +1,4 @@
-yay -Sy docker docker-compose
+yay -S --needed --noconfirm docker docker-compose
 
-# start service
+# start service / set to start at boot
 sudo systemctl enable --now docker.service

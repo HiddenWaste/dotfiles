@@ -1,4 +1,4 @@
-yay -Sy kitty fastfetch starship vim zellij-bin
+yay -S --needed --noconfirm kitty fastfetch starship vim zellij-bin
 
 # populate configs from dotfiles
 

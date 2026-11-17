@@ -1,5 +1,4 @@
-yay -S libreoffice zen-browser-bin krusader
-
+yay -S --needed --noconfirm libreoffice-fresh zen-browser-bin krusader
 
 # Libre Office - FOSS microsoft office suite alternative
 #

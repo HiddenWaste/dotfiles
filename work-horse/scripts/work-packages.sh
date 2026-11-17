@@ -1,5 +1,4 @@
-yay -Sy google-chrome filezilla rsync remmina cifs-utils
-
+yay -S --needed --noconfirm google-chrome filezilla rsync remmina cifs-utils
 
 # google-chrome - zen doesn't like some of our webapps
 #
