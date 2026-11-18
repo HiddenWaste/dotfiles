@@ -2,7 +2,7 @@
 set -euo pipefail       # Exit on error, unset variables, or pipe failures
 
 if ! command -v pass &>/dev/null; then       # Check if the pass utility is installed
-    sudo yay -Sy --needed --noconfirm pass sshpass  #  Install pass via pacman if it is missing
+    yay -Sy --needed --noconfirm pass sshpass  #  Install pass via pacman if it is missing
 fi                                                                       
 
 if [ ! -d "$HOME/.password-store" ]; then  # Check if password store directory does not exist

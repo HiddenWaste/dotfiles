@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
 yay -S --needed --noconfirm tailscale openssh
 
 # Start/Enable necessary system services

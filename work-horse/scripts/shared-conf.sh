@@ -1,3 +1,6 @@
+# #!/usr/bin/env bash
+set -euo pipefail
+
 # Zellij: configuration and layouts!
 ln -sfn ~/code/dotfiles/common/.config/zellij/ ~/.config/
 # TODO: figure out plugins

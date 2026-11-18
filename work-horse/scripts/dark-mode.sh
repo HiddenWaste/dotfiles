@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 # Install required packages (with standard spaces and --needed)
 sudo pacman -S --needed --noconfirm xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \
@@ -31,8 +32,8 @@ gtk-application-prefer-dark-theme = 1
 EOF
 
 # Apply dconf/gsettings immediately for the current session
-gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'|| true
+gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark' || true
 
 # Restart portals so running browsers pick up the change immediately
 systemctl --user restart xdg-desktop-portal-gtk.service xdg-desktop-portal.service || true 

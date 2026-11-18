@@ -8,15 +8,14 @@ DOTFILES_DIR="$HOME/code/dotfiles"
 MODULES=(
     "hyprland.sh"
     "yay.sh"
-    "dark-mode.sh"
     "term-tools.sh"
     "networking.sh"
-    "secrets.sh"
     "audio.sh"
     "docker.sh"
     "general-apps.sh"
     "work-packages.sh"
-    "work-repos.sh"
+    "dark-mode.sh"
+    "shared-conf.sh"
 )
 
 # Order of installations
@@ -31,13 +30,14 @@ MODULES=(
 #
 # 3 - term-tools.sh
 # 4 - networking.sh
-# 5 - secrets.sh
+# XX 5 - secrets.sh
 # 6 - audio.sh
 # 7 - docker.sh
 # 8 - general-apps.sh
 # 9 - work-packages.sh
-# 10 - work-repos.sh
+# XX 10 - work-repos.sh
 #
+# XX = taken out because they were interactive
 #   ===== CONFIGURATION =====
 #
 # 11 - dark-mode.sh
@@ -67,3 +67,5 @@ for mod in "${MODULES[@]}"; do
     echo "========================================"
     bash "$SCRIPTS_DIR/$mod"
 done
+
+echo "All done! Now run secrets.sh and work-repos.sh manually after boot!"

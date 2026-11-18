@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
 yay -S --needed --noconfirm google-chrome filezilla rsync remmina cifs-utils
 
 # google-chrome - zen doesn't like some of our webapps

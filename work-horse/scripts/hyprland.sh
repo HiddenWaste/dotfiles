@@ -1,10 +1,13 @@
 # This script models the necessary components for my general
 #   arch setup! the main thing to note is some of this is the
 #   first stuff to be installed, especially if a DE is desired.
+#
+#!/usr/bin/env bash
+set -euo pipefail
 
-pacman -Syu --noconfirm # update pacman
+sudo pacman -Syu --noconfirm # update pacman
 
-pacman -S --needed --noconfirm hyprland hyprpaper hypridle hyprlock dunst rofi polkit-agent-kde grim slurp wl-clipboard jq otf-hermit-nerd 
+sudo pacman -S --needed --noconfirm hyprland hyprpaper hypridle hyprlock dunst rofi polkit-kde-agent grim slurp wl-clipboard jq otf-hermit-nerd 
 
 # hyprland - wayland based tiling window manager
 #               (wayland is the compositor)
