@@ -4,7 +4,7 @@ p() {
 
 # Specific ssh functions
 web4() {
-  sshpass -d3 ssh web4 3< <(pass show ssh/web4 | head -n 1)
+  sshpass -d3 ssh web4admin@10.1.2.103 3< <(pass show ssh/web4 | head -n 1)
 }
 
 dev-machine() {

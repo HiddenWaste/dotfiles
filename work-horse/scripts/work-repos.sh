@@ -20,6 +20,11 @@ REPO_NAMES=(
   "api"
   "web4-utils"
   "utilities"
+  "kcfs"
+  "sql-interface"
+  "scheduled-tasks"
+  "usf-shared"
+  "usf-jobs"
 )
 
 # Clone each repository into ~/code/codebase

@@ -35,6 +35,3 @@ for ((i=1; i <= NUM_SSH; i++)); do
     read -rp "Enter ssh pass path/name (e.g. ssh/web4) : " SECRET_NAME
     pass insert "$SECRET_NAME"
 done
-
-echo "Done! To use them in ~/.bashrc:"   # Output completion message to user
-echo "export GITHUB_TOKEN='$(pass show tokens/github 2>/dev/null)'"       # Print example export snippet for bashrc usage
