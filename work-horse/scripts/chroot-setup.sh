@@ -19,6 +19,34 @@ UCODE=""
 pacman -Syu --noconfirm --needed \
   networkmanager sudo git base-devel grub efibootmgr vim $UCODE 
 
+## 3.3 Time
+
+# Set the Timezone
+ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime
+
+# Generate /etc/adjtime
+hwclock --systohc
+
+## 3.4 Localization
+locale-gen
+
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
+
+## 3.5 Network Configuration
+
+# Set hostname & create user
+echo "$HOSTNAME" > /etc/hostname
+
+if ! id "$USERNAME" &>/dev/null; then
+    useradd -m -G wheel -s /bin/bash "$USERNAME"
+    echo "Set password for $USERNAME:"
+    passwd "$USERNAME"
+fi
+
+echo "%wheel ALL=(ALL:ALL) ALL" > /etc/sudoers.d/wheel
+chmod 440 /etc/sudoers.d/wheel
+
+
 # networkmanager - provides internet service capabilities and nmtui as a utility
 # sudo - run commands as root with elevated permissions
 # git - clone, pull, push, and do whatever youd like with code
@@ -31,15 +59,6 @@ pacman -Syu --noconfirm --needed \
 # Enable NetworkManager so first boot has Wi-Fi/Ethernet ready
 systemctl enable NetworkManager
 
-# Set hostname & create user
-echo "$HOSTNAME" > /etc/hostname
-if ! id "$USERNAME" &>/dev/null; then
-    useradd -m -G wheel -s /bin/bash "$USERNAME"
-    echo "Set password for $USERNAME:"
-    passwd "$USERNAME"
-fi
-echo "%wheel ALL=(ALL:ALL) ALL" > /etc/sudoers.d/wheel
-chmod 440 /etc/sudoers.d/wheel
 
 # Install & configure GRUB (assumes EFI is mounted at /boot)
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
@@ -52,9 +71,7 @@ sed -i 's/^#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 
-
 ## MAJOR INSTALL BEGINS!!!
-
 # Temporarily allow passwordless sudo for automated AUR/pacman installs
 echo "%wheel ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/wheel
 

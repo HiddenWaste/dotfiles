@@ -1,9 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
 # This script models the necessary components for my general
 #   arch setup! the main thing to note is some of this is the
 #   first stuff to be installed, especially if a DE is desired.
-#
-#!/usr/bin/env bash
-set -euo pipefail
 
 sudo pacman -Syu --noconfirm # update pacman
 
