@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
-
-# Zellij: configuration and layouts!
-ln -sfn ~/code/dotfiles/common/.config/zellij/ ~/.config/
+# Zellij: configuration and layouts!  ln -sfn ~/code/dotfiles/common/.config/zellij/ ~/.config/
 # TODO: figure out plugins
+#       ^ seemed to just work out the box when symlinking config?!?
 
 # Fastfetch
 rm -rf ~/.config/fastfetch/*
