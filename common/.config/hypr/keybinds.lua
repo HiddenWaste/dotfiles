@@ -15,6 +15,7 @@ hl.bind("SUPER + S", hl.dsp.exec_cmd('rofi -show ssh'))
 hl.bind("SUPER + E", hl.dsp.exec_cmd("bash $HOME/.config/rofi/scripts/unicode.sh >> /tmp/unicode.log 2>&1"))
 
 -- GENERAL UTILITY
+hl.bind("SUPER + BACKSPACE", hl.dsp.exec_cmd("hyprlock"))
 hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | wl-copy")) -- Screen Snipping
 hl.bind("SUPER + P", hl.dsp.exec_cmd("~/code/dotfiles/travel-box/.config/hypr/hyprcolor.sh"))
 
