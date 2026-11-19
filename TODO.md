@@ -2,20 +2,51 @@
 - hyprland script for pulling colors from wallpaper at startup?
     - rofi theme also pulls from this??
 - kitty configs
-- zellij configs
-- switch systems to rofi over ulauncher
-- use whole folder symlinks instead of file by file
-- build out auto install script exosystem for new arch installations
-
 
 # gucci-smart-toilet
-- 'luafy' hyprland configuration
-- try switching to hyprland
 
 # travel-box
-- rofi config
 
-# work-horse
-- import rofi config
-- import fastfetch config
-- make new pokemon list
+# Configuration Checklisting
+
+# Rofi
+- remove sys from ESC menu
+- find out if vim motions on rofi or alt + entry-num are possible
+- research options for rofi's config.rasi
+    - what even is a .rasi?
+
+# Hyprland
+- Hypridle
+- Progress Bars for Brightness and Audio Volume
+- Dunst notification for low battery
+- custom dunst notification sound
+- dunst notification for wifi & bluetooth connection
+
+# Kitty
+- Slightly higher contrast or something for light grays to make it visible
+- cursor trail?
+
+# Zellij
+- color scheme to fit system
+    - colors from hyprpicker?
+
+# Zen
+- Dark Reader Settings
+
+# New Tools / Packages
+- SuperCollider
+    - See supercollider section!
+- synchting
+    - dnd, dsa, & other folders
+
+# Documentation
+- base system packages and configuration 'timeline'
+    - eseentially a bash script that *would* install everything hyprothetically in order
+
+packages/
+    - cargo.txt         -- apps install using 'cargo install app'
+    - Pacsea
+
+# SuperCollider
+- Find if the server can be booted at hyprland start for system notification sound shenangians through SuperCollider
+    - Connect ot this ongoing socket from a new scide session?
