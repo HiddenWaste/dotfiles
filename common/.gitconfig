@@ -19,3 +19,5 @@
 	name = HiddenWaste
 [protocol "file"]
 	allow = always
+[core]
+	editor = vim
