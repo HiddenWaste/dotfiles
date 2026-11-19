@@ -1,4 +1,4 @@
-# #!/usr/bin/env bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 # Zellij: configuration and layouts!
@@ -12,9 +12,16 @@ mkdir -p ~/.config/fastfetch
 ln -sfn ~/code/dotfiles/common/.config/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc
 ln -sfn ~/code/dotfiles/common/.config/fastfetch/winter.txt ~/.config/fastfetch/poke.txt
 
-
 # Hyprland
 #   While each system will have unique customizations, underlying keybinds and functionalities are needed to be shared
-
 ln -sfn ~/code/dotfiles/common/.config/hypr/ ~/.config/
+
+# Rofi
 ln -sfn ~/code/dotfiles/common/.config/rofi/ ~/.config/
+
+# Bash
+ln -sf ~/code/dotfiles/common/.bashrc ~/.bashrc
+ln -sf ~/code/dotfiles/common/.bash_functions ~/.bash_functions
+ln -sf ~/code/dotfiles/common/.bash_aliases ~/.bash_aliases
+ln -sf ~/code/dotfiles/common/.vimrc ~/.vimrc
+ln -sf ~/code/dotfiles/common/.gitconfig ~/.gitconfig

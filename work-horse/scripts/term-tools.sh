@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-yay -S --needed --noconfirm kitty fastfetch pokemon-colorscripts starship zellij-bin
+yay -S --needed --noconfirm kitty fastfetch pokemon-colorscripts starship zellij
 
 # NOTE: Vim is installed at initial chroot level
 #
