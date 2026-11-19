@@ -1,5 +1,4 @@
 -- KEYBINDS --
-
 local mainMod = "SUPER" -- Set this as a var for now
 
 -- APPLICATIONS
@@ -8,11 +7,12 @@ hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd('zen-browser'))
 hl.bind("SUPER + SHIFT + Z", hl.dsp.exec_cmd('kitty zellij'))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd('discord'))
 
--- ROFI NAVIGATION
+-- ROFI USAGES
 hl.bind("SUPER + TAB", hl.dsp.exec_cmd('rofi -show window'))
 hl.bind("SUPER + SPACE", hl.dsp.exec_cmd('rofi -show drun'))
 hl.bind("SUPER + ESCAPE", hl.dsp.exec_cmd('rofi -show scripts -modes "scripts:~/.config/rofi/scripts/.hub.sh"'))
 hl.bind("SUPER + S", hl.dsp.exec_cmd('rofi -show ssh'))
+hl.bind("SUPER + E", hl.dsp.exec_cmd("bash $HOME/.config/rofi/scripts/unicode.sh >> /tmp/unicode.log 2>&1"))
 
 -- GENERAL UTILITY
 hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | wl-copy")) -- Screen Snipping
