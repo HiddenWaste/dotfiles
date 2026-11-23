@@ -3,6 +3,12 @@ alias t='echo $(timedatectl status | grep "Local" | tail -c 13 | head -c 9)'
 alias h='history'
 alias v='vim'
 
+# docker stufs
+alias dls='sudo docker ps'
+alias dcu='sudo docker compose up -d'
+alias dcd='sudo docker compose down'
+alias dlg='sudo docker logs'
+
 ############
 # LS STUFF #
 ############
