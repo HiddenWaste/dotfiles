@@ -4,6 +4,12 @@ alias h='history'
 alias v='vim'
 alias p='~/PrismLauncher-Linux-x86_64.AppImage'
 
+# docker stufs
+alias dls='sudo docker ps'
+alias dcu='sudo docker compose up -d'
+alias dcd='sudo docker compose down'
+alias dlg='sudo docker logs'
+
 ############
 # LS STUFF #
 ############
