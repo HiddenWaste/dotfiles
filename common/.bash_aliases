@@ -2,7 +2,7 @@ alias z='zellij'
 alias t='echo $(timedatectl status | grep "Local" | tail -c 13 | head -c 9)'
 alias h='history'
 alias v='vim'
-alias p='~/PrismLauncher-Linux-x86_64.AppImage'
+alias pr='~/PrismLauncher-Linux-x86_64.AppImage'
 
 # docker stufs
 alias dls='sudo docker ps'
