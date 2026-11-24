@@ -7,13 +7,14 @@ if [ -z "$1" ]; then
     for script in "$SCRIPT_DIR"/*.sh; do
         [ -x "$script" ] || continue
         prefix=$(basename "$script" .sh)
-        # Call each script with no args and prefix its output with its filename
-        "$script" | sed "s/^/${prefix} /"
+        # Show each option bare; stash the script name in rofi's hidden info field
+        "$script" | while IFS= read -r line; do
+            printf '%s\0info\x1f%s\n' "$line" "$prefix"
+        done
     done
 else
-    # 2. When you select an item (e.g., "sys shutdown"), split the prefix and argument
-    prefix="${1%% *}"
-    arg="${1#* }"
-    nohup "$SCRIPT_DIR/${prefix}.sh" "$arg" >/dev/null 2>&1 &
+    # 2. On selection, $1 is the bare option and $ROFI_INFO is the script name
+    [ -n "$ROFI_INFO" ] || exit 0
+    nohup "$SCRIPT_DIR/${ROFI_INFO}.sh" "$1" >/dev/null 2>&1 &
 fi
 

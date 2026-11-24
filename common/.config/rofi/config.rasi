@@ -1,5 +1,16 @@
 configuration {
     drun-display-format: "{name}";
+
+    /* Vim-style navigation (Ctrl-based so bare j/k stay typeable) */
+    kb-row-up:           "Up,Control+k";
+    kb-row-down:         "Down,Control+j";
+    kb-row-left:         "Control+Page_Up,Control+h";
+    kb-row-right:        "Control+Page_Down,Control+l";
+    kb-accept-entry:     "Control+m,Return,KP_Enter";
+    /* Clear default bindings that clash with Ctrl+j/k/l/h above */
+    kb-remove-to-eol:    "";
+    kb-mode-complete:    "";
+    kb-remove-char-back: "BackSpace,Shift+BackSpace";
 }
 
 @theme "/usr/share/rofi/themes/solarized_alternate.rasi"
