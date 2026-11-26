@@ -22,5 +22,10 @@ ln -sfn ~/code/dotfiles/common/.config/rofi/ ~/.config/
 ln -sf ~/code/dotfiles/common/.bashrc ~/.bashrc
 ln -sf ~/code/dotfiles/common/.bash_functions ~/.bash_functions
 ln -sf ~/code/dotfiles/common/.bash_aliases ~/.bash_aliases
+ln -sf ~/code/dotfiles/common/.bash_profile ~/.bash_profile
+
+# Vim
 ln -sf ~/code/dotfiles/common/.vimrc ~/.vimrc
+
+# Git
 ln -sf ~/code/dotfiles/common/.gitconfig ~/.gitconfig

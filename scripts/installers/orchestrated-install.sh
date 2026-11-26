@@ -57,10 +57,10 @@ else
     git -C "$DOTFILES_DIR" pull
 fi
 
-cd "$DOTFILES_DIR/work-horse/scripts/"
+cd "$DOTFILES_DIR/scripts/installers/"
 
 # Execute each module in order
-SCRIPTS_DIR="$DOTFILES_DIR/work-horse/scripts"
+SCRIPTS_DIR="$DOTFILES_DIR/scripts/installers"
 for mod in "${MODULES[@]}"; do
     echo "========================================"
     echo "==> Running $mod..."

@@ -3,6 +3,7 @@ alias t='echo $(timedatectl status | grep "Local" | tail -c 13 | head -c 9)'
 alias h='history'
 alias v='vim'
 alias pr='~/PrismLauncher-Linux-x86_64.AppImage'
+alias y='yay -Syu --needed --noconfirm'
 
 # docker stufs
 alias dls='sudo docker ps'
