@@ -23,6 +23,7 @@ ln -sf ~/code/dotfiles/common/.bashrc ~/.bashrc
 ln -sf ~/code/dotfiles/common/.bash_functions ~/.bash_functions
 ln -sf ~/code/dotfiles/common/.bash_aliases ~/.bash_aliases
 ln -sf ~/code/dotfiles/common/.bash_profile ~/.bash_profile
+ln -sf ~/code/dotfiles/common/.bash_logout ~/.bash_logout
 
 # Vim
 ln -sf ~/code/dotfiles/common/.vimrc ~/.vimrc
