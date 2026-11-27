@@ -16,6 +16,7 @@ MODULES=(
     "work-packages.sh"
     "dark-mode.sh"
     "shared-conf.sh"
+    "games.sh"
 )
 
 # Order of installations

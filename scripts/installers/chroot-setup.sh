@@ -17,7 +17,7 @@ set -euo pipefail
 # That is less safe: a failure leaves you mid-install (the trap below still restores sudo).
 
 USERNAME="carter"
-HOSTNAME="coder"
+HOSTNAME="gucci-smart-toiler"
 TIMEZONE="America/Chicago"
 REPO_URL="https://github.com/HiddenWaste/dotfiles.git"
 RUN_ORCHESTRATOR=false

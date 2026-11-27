@@ -2,7 +2,6 @@ alias z='zellij'
 alias t='echo $(timedatectl status | grep "Local" | tail -c 13 | head -c 9)'
 alias h='history'
 alias v='vim'
-alias pr='~/PrismLauncher-Linux-x86_64.AppImage'
 alias y='yay -Syu --needed --noconfirm'
 
 # docker stufs
@@ -41,5 +40,3 @@ alias .....='cd ../../../..'
 
 alias emptydir='rm -rf ./*'
 # ^ this is to help prevent accidentally removing all files
-
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
