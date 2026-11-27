@@ -1,7 +1,6 @@
 #
 # ~/.bash_profile
 #
-
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 # Start hyprland (but not if connected via ssh)
